@@ -1,0 +1,77 @@
+body {
+    background-color: #000; /* Fondo negro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Altura mínima para centrar verticalmente */
+    font-family: 'Baloo 2', cursive; /* Cambio de fuente */
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 230%;
+    overflow: hidden;
+    z-index: -100; /* Coloca el video detrás de todo el contenido */
+    opacity: 0.4; /* Establece la opacidad al 30% */
+}
+
+#video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    border: none; /* Elimina cualquier borde del iframe */
+}
+
+#lyricsContainer {
+    margin-top: 30px;
+    width: 400px; /* Ancho del contenedor */
+    height: 150px; /* Altura del contenedor */
+    background: radial-gradient(circle at center, #305c84 10%, #111 500%); /* Gradiente radial de gris a negro */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra para efecto 3D */
+    position: relative;
+    font-size: 26px; /* Tamaño de la fuente base */
+    color: #FFFFFF;
+    padding: 5px; /* Padding interno reducido */
+    font-family: 'Baloo 2', cursive; /* Aplicar la fuente Baloo al contenedor */
+}
+
+.line {
+    font-size: 0.8em;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Inicia con opacidad 0 */
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s ease-in-out; /* Transición suavizada de opacidad y transformación */
+}
+
+.line.active {
+    font-size: 1.2em;
+    opacity: 1; /* Opacidad completa para la línea activa */
+    transform: scale(1.2); /* Escala aumentada para la línea activa */
+}
+
+.line.near {
+    opacity: 0.5; /* Opacidad para líneas cercanas */
+    transform: scale(0.9);
+}
+#audio-background {
+    display: none;
+}
