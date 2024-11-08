@@ -42,3 +42,18 @@ function updateLyrics() {
 
 splitLongLines(); // Llama a esta función para dividir las líneas largas antes de comenzar la animación
 updateLyrics();
+window.onload = function() {
+    // Aplicar el efecto de fade-in
+    document.body.style.opacity = '1';
+
+    // Configurar el botón para iniciar la música
+    const playButton = document.getElementById('play-audio');
+    const audio = document.getElementById('background-audio');
+
+    playButton.addEventListener('click', function() {
+        if (audio) {
+            audio.volume = 0.4;
+            audio.play();
+        }
+    });
+};
